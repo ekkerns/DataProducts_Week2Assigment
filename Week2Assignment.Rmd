@@ -1,0 +1,23 @@
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Week2 Assignment
+
+This map was created on July 6th, 2018.
+
+```{r map, echo=FALSE, message = FALSE, warning=FALSE}
+library(leaflet)
+newIcon<-makeIcon(
+        iconUrl = "https://content.presspage.com/uploads/1483/800_facebookimage.jpg?10000",
+        iconWidth = 30, iconHeight = 30
+)
+
+PlacementLatLong<-data.frame(
+        lat = 39.084095, lng = -94.577721)
+
+PlacementLatLong %>% leaflet() %>% addTiles() %>% 
+        addMarkers(icon = newIcon, popup = "Adelle Hall Campus")
+```
